@@ -1,24 +1,22 @@
-#include<stdio.h>
-int main(){
-    int n1,n2,temp,dividend,divisor,lcm,gcd;
-    printf("enter the nos");
-    scanf("%d %d",&n1,&n2);
-    if(n1>n2){
-        dividend=n1;
-        divisor=n2;
+#include <stdio.h>
+
+int main() {
+
+    int n1, n2, max, lcm;
+
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
+
+    // maximum number between n1 and n2 is stored in max
+    max = (n1 > n2) ? n1 : n2;
+
+    lcm = max;
+
+    while ((lcm % n1 != 0) || (lcm % n2 != 0)) {
+        lcm += max;
     }
-    else if(n2>n1){
-        dividend=n2;
-        divisor=n1;
-    }
-    while(divisor!=0){
-        temp=divisor;
-        divisor=dividend%divisor;
-        dividend=temp;
-    }
-    printf("the gcd is %d\n",dividend);
-    gcd=dividend;
-    lcm=(n1*n2)/gcd;
-    printf("the lcm is %d",lcm);
-return 0;
+
+    printf("The LCM of %d and %d is %d.", n1, n2, lcm);
+
+    return 0;
 }

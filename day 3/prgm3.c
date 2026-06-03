@@ -1,21 +1,18 @@
-#include<stdio.h>
-int main(){
-    int n1,n2,temp,dividend,divisor;
-    printf("enter the nos");
-    scanf("%d %d",&n1,&n2);
-    if(n1>n2){
-        dividend=n1;
-        divisor=n2;
+#include <stdio.h>
+int main()
+{
+    int n1, n2, i, gcd;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &n1, &n2);
+
+    for(i=1; i <= n1 && i <= n2; ++i)
+    {
+        if(n1%i==0 && n2%i==0)
+            gcd = i;
     }
-    else if(n2>n1){
-        dividend=n2;
-        divisor=n1;
-    }
-    while(divisor!=0){
-        temp=divisor;
-        divisor=dividend%divisor;
-        dividend=temp;
-    }
-    printf("the gcd is %d",dividend);
-return 0;
+
+    printf("G.C.D of %d and %d is %d", n1, n2, gcd);
+
+    return 0;
 }
