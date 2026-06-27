@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
     int pin;
     int correctPin = 1234;
@@ -7,17 +6,13 @@ int main() {
     int choice;
     float amount;
     int attempts = 0;
-
-    printf("==============================\n");
+    printf("=======\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\=======================\n");
     printf("       WELCOME TO ATM         \n");
     printf("==============================\n\n");
-
-    // PIN verification - 3 attempts
     while (attempts < 3) {
         printf("Enter PIN: ");
         scanf("%d", &pin);
         attempts++;
-
         if (pin == correctPin) {
             break;
         } else {
